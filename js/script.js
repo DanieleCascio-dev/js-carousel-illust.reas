@@ -2,7 +2,10 @@
 
 const imgBoxElem = document.querySelector(".img-box");
 const carouselElem = document.querySelector(".carousel");
-console.log(carouselElem);
+/* const rightElem = document.querySelector(".right");
+console.log(rightElem); */
+const leftElem = document.querySelector(".left");
+
 const arrayImg = [
   "07_BOTANICAL_01.jpg",
   "12_13_GHOST_COTTAGECORE_01.jpg",
@@ -21,4 +24,42 @@ for (let i = 0; i < arrayImg.length; i++) {
 
 carouselElem.innerHTML += imgMess;
 
-imgBoxElem.innerHTML = `<img src="img/${arrayImg[2]}"/>`;
+let index = 2;
+imgBoxElem.style.backgroundImage = `url(../img/${arrayImg[index]})`;
+
+//Change img on click right
+
+document.querySelector(".right").addEventListener("click", function () {
+  console.log("hey");
+  if (index === arrayImg.length - 1) {
+    index = 0;
+    imgBoxElem.style.backgroundImage = `url(../img/${arrayImg[index]})`;
+    index++;
+  } else {
+    if (index !== 1) {
+      index++;
+      imgBoxElem.style.backgroundImage = `url(../img/${arrayImg[index]})`;
+    } else {
+      imgBoxElem.style.backgroundImage = `url(../img/${arrayImg[index]})`;
+      index++;
+    }
+  }
+});
+
+//Change on click left
+document.querySelector(".left").addEventListener("click", function () {
+  console.log("hey");
+  if (index === 0) {
+    index = arrayImg.length - 1;
+    imgBoxElem.style.backgroundImage = `url(../img/${arrayImg[index]})`;
+    console.log(
+      (imgBoxElem.style.backgroundImage = `url(../img/${arrayImg[index]})`)
+    );
+  } else if (index === arrayImg.length - 1) {
+    index--;
+    imgBoxElem.style.backgroundImage = `url(../img/${arrayImg[index]})`;
+  } else {
+    index--;
+    imgBoxElem.style.backgroundImage = `url(../img/${arrayImg[index]})`;
+  }
+});

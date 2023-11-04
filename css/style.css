@@ -17,7 +17,6 @@ img {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
   justify-content: center;
   align-items: center;
   background-color: rgb(240, 234, 229);
@@ -28,43 +27,36 @@ header {
 }
 
 main {
-  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75%;
+  width: 100%;
 }
 
 footer {
-  height: 25%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+/* CAROUSEL */
 
 .img-box {
   display: flex;
   justify-content: center;
+  max-height: 100%;
+  min-height: 100%;
+  width: 60%;
+  /* background-image: url(../07_BOTANICAL_01.jpg); */
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .img-box img {
   width: 30%;
-}
-
-button {
-  border: none;
-  text-decoration: none;
-  background-color: transparent;
-  border: 1px solid black;
-  border-radius: 50%;
-  padding: 0.5rem;
-}
-
-.left {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.right {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .carousel {
@@ -75,7 +67,7 @@ button {
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-  border: 1px solid violet;
+  /* border: 1px solid violet; */
   position: relative;
 }
 
@@ -89,4 +81,38 @@ button {
 
 .hidden {
   display: none;
+}
+
+/* .cards {
+  width: calc(100% / 6);
+  padding: 1rem;
+  border: 1px solid #b14a37;
+} */
+
+/* BUTTON */
+
+button {
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 2rem;
+  /* border: 1px solid black;
+  border-radius: 50%;
+  padding: 0.5rem; */
+}
+
+.left {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #898aac;
+}
+
+.right {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #19141a;
 }
